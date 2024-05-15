@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ice Cream Shop Menu</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Ice Cream Shop</title>
   </head>
   <body>
-    <h1>Ice Cream Flavors</h1>
-    <button id="chocolate">Chocolate</button>
-    <button id="strawberry">Strawberry</button>
-    <button id="vanilla">Vanilla</button>
-    <button id="blueberry">Blueberry</button>
-    <button id="matcha">Matcha</button>
+    <h1>Welcome to our Ice Cream Shop!</h1>
+    <h2>Choose your flavor:</h2>
+    <ul>
+      <li>Chocolate</li>
+      <li>Strawberry</li>
+      <li>Vanilla</li>
+      <li>Blueberry</li>
+      <li>Matcha</li>
+    </ul>
     <h2>Order Menu</h2>
-    <div id="order"></div>
-    <script src="script.js"></script>
+    <button id="addChocolate">Add Chocolate</button>
+    <button id="addStrawberry">Add Strawberry</button>
+    <button id="addVanilla">Add Vanilla</button>
+    <button id="addBlueberry">Add Blueberry</button>
+    <button id="addMatcha">Add Matcha</button>
+    <div id="order">
+      <!-- Order items will be added here -->
+    </div>
+    <script>
+      // JavaScript code to handle adding items to the order menu
+      document.getElementById('addChocolate').addEventListener('click', function() {
+        addItem('Chocolate');
+      });
+      // ... Repeat for other flavors
+      function addItem(flavor) {
+        var order = document.getElementById('order');
+        var newItem = document.createElement('p');
+        newItem.textContent = flavor;
+        order.appendChild(newItem);
+      }
+    </script>
   </body>
 </html>
